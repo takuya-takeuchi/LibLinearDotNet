@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibLinearDotNet</name>
+    </assembly>
+    <members>
+        <member name="T:LibLinearDotNet.DisposableObject">
+            <summary>
+            ネイティブ構造体のポインタを保持するクラスです。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.DisposableObject.IsDisposed">
+            <summary>
+            インスタンスが破棄されているかどうかを示す値を取得します。
+            </summary>
+            <returns>インスタンスが破棄されている場合は true。それ以外の場合は false。</returns>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.ThrowIfDisposed">
+            <summary>
+            オブジェクトが破棄されている場合、<see cref="T:System.ObjectDisposedException"/> がスローされます。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.ThrowIfDisposed(System.String)">
+            <summary>
+            オブジェクトが破棄されている場合、<see cref="T:System.ObjectDisposedException"/> がスローされます。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.DisposeManaged">
+            <summary>
+            マネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.Dispose">
+            <summary>
+            この <see cref="T:LibLinearDotNet.DisposableObject"/> によって使用されている全てのリソースを解放します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.Dispose(System.Boolean)">
+            <summary>
+            この <see cref="T:LibLinearDotNet.DisposableObject"/> によって使用されている全てのリソースを解放します。
+            </summary>
+            <param name="disposing"><see cref="M:System.IDisposable.Dispose"/> メソッドが呼ばれたかどうかを示す値。</param>
+        </member>
+        <member name="T:LibLinearDotNet.FeatureNode">
+            <summary>
+            ベクトル データの要素である特徴ノードを表現します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNode.#ctor(System.IntPtr,System.Int32)">
+            <summary>
+            特徴ノード データと特徴ノードデータのインデックスを指定して、<see cref="T:LibLinearDotNet.FeatureNode"/> 構造体の新しいインスタンスを初期化します。
+            </summary>
+            <param name="ptr"><see cref="T:LibLinearDotNet.NativeMethods.feature_node"/> の配列へのポインタ。</param>
+            <param name="index">特徴ノードが位置する 0 を基準としたインデックス。</param>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNode.#ctor(LibLinearDotNet.NativeMethods.feature_node*)">
+            <summary>
+            特徴ノード データを指定して、<see cref="T:LibLinearDotNet.FeatureNode"/> 構造体の新しいインスタンスを初期化します。
+            </summary>
+            <param name="ptr"><see cref="T:LibLinearDotNet.NativeMethods.feature_node"/> の配列へのポインタ。</param>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNode.Index">
+            <summary>
+            特徴ノード データにおける要素の位置を示す値を取得または設定します。
+            </summary>
+            <returns>特徴ノード データにおける要素の位置を表現する 1 基準のインデックス。</returns>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNode.Value">
+            <summary>
+            特徴ノード データにおける要素の値を取得または設定します。
+            </summary>
+            <returns>特徴ノード データにおける要素の位置を表現する 1 基準のインデックス。</returns>
+        </member>
+        <member name="T:LibLinearDotNet.FeatureNodeArray">
+            <summary>
+            ベクトル データを表現します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArray.Length">
+            <summary>
+            <see cref="T:LibLinearDotNet.FeatureNodeArray"/> の全次元における要素の総数を取得します。
+            </summary>
+            <returns><see cref="T:LibLinearDotNet.FeatureNodeArray"/> の全次元における要素の総数。配列内に要素が存在しない場合は 0。</returns>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArray.Item(System.Int32)">
+            <summary>
+            指定したインデックスにある要素を取得します。
+            </summary>
+            <param name="index">取得する要素のインデックス。</param>
+            <returns>指定したインデックス位置にある要素。</returns>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNodeArray.GetEnumerator">
+            <summary>
+            コレクションを反復処理する列挙子を返します。
+            </summary>
+            <returns>コレクションの反復処理に使用できる <see cref="T:System.Collections.Generic.IEnumerator`1"/> 列挙子。</returns>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNodeArray.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            コレクションを反復処理する列挙子を返します。
+            </summary>
+            <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator"/> オブジェクト。</returns>
+        </member>
+        <member name="T:LibLinearDotNet.FeatureNodeArrayCollecion">
+            <summary>
+            <see cref="T:LibLinearDotNet.FeatureNodeArray"/> のコレクションを表現します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArrayCollecion.Count">
+            <summary>
+            <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/> に含まれる要素の数を取得します。
+            </summary>
+            <returns><see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/> に含まれる要素の数。</returns>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArrayCollecion.Item(System.Int32)">
+            <summary>
+            指定したインデックスの要素を取得します。
+            </summary>
+            <param name="index">取得する要素のインデックス。</param>
+            <returns>指定したインデックス位置にある要素。</returns>
+        </member>
+        <member name="T:LibLinearDotNet.LibLinear">
+            <summary>
+            LIBLINEAR の機能を提供します。
+            </summary>
+        </member>
+        <member name="T:LibLinearDotNet.LibLinear.PrintFunc">
+            <summary>
+            string パラメータを持ち、値を返されないメソッドをカプセル化します。
+            </summary>
+            <param name="message">LIBLINEAR から渡されるメッセージ。</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.CheckParameter(LibLinearDotNet.Problem,LibLinearDotNet.Parameter)">
+            <summary>
+            パラメータが問題の許容領域にあるかどうかをチェックします。
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <returns>パラメータが実行可能である場合は null を返します。それ以外の場合はエラー メッセージを返します。</returns>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.CrossValidation(LibLinearDotNet.Problem,LibLinearDotNet.Parameter,System.Int32,System.Double[]@)">
+            <summary>
+            交差検証を行います。
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <param name="fold">サンプルを分割する数。</param>
+            <param name="target">検証プロセスにおける、予測されたラベル (全問題のインスタンスの) が格納されます。</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.FindParameterC(LibLinearDotNet.Problem,LibLinearDotNet.Parameter,System.Int32,System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            指定した C パラメータにおける交差検証を行う代わりに、最高の交差検証精度を示す最良の C パラメータを探索するために交差検証を複数回行います。
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <param name="fold">サンプルを分割する数。</param>
+            <param name="startC">C の開始パラメータ</param>
+            <param name="maxC">C の最大パラメータ。</param>
+            <param name="bestC">C の最良パラメータを格納します。</param>
+            <param name="bestRate"><paramref name="bestC"/> に対応する精度を格納します。</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.Predict(LibLinearDotNet.Model,LibLinearDotNet.FeatureNodeArray)">
+            <summary>
+            あるモデルを与えられたテスト ベクトルに対して分類または回帰を行います。
+            </summary>
+            <param name="model"><see cref="T:LibLinearDotNet.Model"/>.</param>
+            <param name="x">テスト ベクトル。</param>
+            <returns>
+            <para>分類モデルでは、x に対する予測ラベルを返します。</para>
+            <para>回帰モデルでは、モデルを使用して計算された x の関数値を返します。</para>
+            </returns>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.Predict(LibLinearDotNet.Model,LibLinearDotNet.FeatureNodeArray,System.Double[]@)">
+            <summary>
+            あるモデルを与えられたテスト ベクトルに対して分類または回帰を行います。
+            </summary>
+            <param name="model"><see cref="T:LibLinearDotNet.Model"/>.</param>
+            <param name="x">テスト ベクトル。</param>
+            <param name="probability">確率推定を格納します。</param>
+            <returns>予測クラスを返します。</returns>
+            <remarks>現在、ロジスティック回帰に対する確率出力のみサポートします。</remarks>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.PredictValues(LibLinearDotNet.Model,LibLinearDotNet.FeatureNodeArray,System.Double[]@)">
+            <summary>
+            最も高い決定値のクラスを返します。
+            </summary>
+            <param name="model"><see cref="T:LibLinearDotNet.Model"/>.</param>
+            <param name="x">テスト ベクトル。</param>
+            <param name="decisionValues">決定値を格納します。</param>
+            <returns>最も高い決定値のクラス。</returns>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.SetPrintFunction(LibLinearDotNet.LibLinear.PrintFunc)">
+            <summary>
+            LIBLINEAR の出力を指定します。
+            </summary>
+            <param name="printFunc">出力を受け取り処理するコールバック。</param>
+            <remarks>null を指定すると、LIBLINEAR からの出力を抑制します。</remarks>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.Train(LibLinearDotNet.Problem,LibLinearDotNet.Parameter)">
+            <summary>
+            与えられた学習データとパラメータに対応する線形分類または回帰のモデルを生成し返します。
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>。</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>。</param>
+            <returns>このメソッドは新しい <see cref="T:LibLinearDotNet.Model"/> を返します。</returns>
+        </member>
+        <member name="T:LibLinearDotNet.LibLinearException">
+            <summary>
+            この例外は、LIBLINEAR の汎用的な例外です。このクラスは継承できません。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinearException.#ctor">
+            <summary>
+            <see cref="T:LibLinearDotNet.LibLinearException"/> クラスの新しいインスタンスを初期化します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinearException.#ctor(System.String)">
+            <summary>
+            エラー メッセージを指定して、<see cref="T:LibLinearDotNet.LibLinearException"/> クラスの新しいインスタンスを初期化します。
+            </summary>
+            <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinearException.#ctor(System.String,System.Exception)">
+            <summary>
+            エラー メッセージとこの例外の原因である内部例外への参照を使用して、<see cref="T:LibLinearDotNet.LibLinearException"/> クラスの新しいインスタンスを初期化します。
+            </summary>
+            <param name="message">例外の原因を説明するエラー メッセージ。</param>
+            <param name="innerException">現在の例外の原因である例外。内部例外が指定されていない場合は、null 参照。</param>
+        </member>
+        <member name="T:LibLinearDotNet.Model">
+            <summary>
+            学習済みモデルを表現します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Classes">
+            <summary>
+            クラスの数を取得します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Features">
+            <summary>
+            特徴データの数を取得します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.IsEstimableProbability">
+            <summary>
+            このモデルが確率推定を行うために必要な情報を含んでいるかどうかを示す値を取得します。
+            </summary>
+            <returns>このモデルが確率推定を行うために必要な情報を含んでいる場合は true。それ以外の場合は false。</returns>
+        </member>
+        <member name="P:LibLinearDotNet.Model.IsRegressionModel">
+            <summary>
+            このモデルがサポート ベクター回帰モデルかどうかを示す値を取得します。
+            </summary>
+            <returns>このモデルが回帰モデルの場合は true。それ以外の場合は false。</returns>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Label">
+            <summary>
+            各クラスに属するラベルの配列を取得します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Parameter">
+            <summary>
+            このモデルのパラメータを取得します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Weights">
+            <summary>
+            特徴の重みの配列を取得します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.Model.GetBiasOfDecisionFunction(System.Int32)">
+            <summary>
+            指定したラベル インデックスのクラスに対応するバイアス項を返します。
+            </summary>
+            <param name="labelIndex">ラベル インデックス。</param>
+            <returns>
+            <para><paramref name="labelIndex"/> のクラスに対応するバイアス項。</para>
+            <para>分類モデルでは、<paramref name="labelIndex"/> が正常な範囲 (0 から <see cref="P:LibLinearDotNet.Model.Classes"/> - 1) の外の場合、0 が返ります。</para>
+            <para>回帰モデルでは、<paramref name="labelIndex"/> は無視されます。</para>
+            </returns>
+        </member>
+        <member name="M:LibLinearDotNet.Model.GetCoefficientOfDecisionFunction(System.Int32,System.Int32)">
+            <summary>
+            指定した特徴インデックスの特徴と指定したラベル インデックスのクラスに対応する係数を返します。
+            </summary>
+            <param name="featureIndex">特徴インデックス。</param>
+            <param name="labelIndex">ラベル インデックスのクラス。</param>
+            <returns>
+            <para><paramref name="featureIndex"/> の特徴と <paramref name="labelIndex"/> のクラスに対応する係数。</para>
+            <para>分類モデルでは、<paramref name="labelIndex"/> が正常な範囲 (0 から <see cref="P:LibLinearDotNet.Model.Classes"/> - 1) の外の場合、0 が返ります。</para>
+            <para>回帰モデルでは、<paramref name="labelIndex"/> は無視されます。</para>
+            </returns>
+        </member>
+        <member name="M:LibLinearDotNet.Model.Load(System.String)">
+            <summary>
+            指定したファイルから <see cref="T:LibLinearDotNet.Model"/> モデルを読み込みます。
+            </summary>
+            <param name="path">LIBLINEAR フォーマットのファイル名とパス。</param>
+            <returns>このメソッドは指定したファイルに対する新しい <see cref="T:LibLinearDotNet.Model"/> を返します。</returns>
+            <exception cref="T:System.ArgumentException">指定したパスが null または空白文字です。</exception>
+            <exception cref="T:System.IO.FileNotFoundException">指定したファイルが存在しません。</exception>
+            <exception cref="T:System.FormatException">指定したファイルは不正なフォーマットです。</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Model.Save(System.String,LibLinearDotNet.Model)">
+            <summary>
+            <see cref="T:LibLinearDotNet.Model"/> を指定したファイルに保存します。
+            </summary>
+            <param name="path">書き込み先のファイル。</param>
+            <param name="model">ファイルに書き込むモデル。</param>
+            <exception cref="T:LibLinearDotNet.LibLinearException">指定したファイルへモデルを保存するのに失敗しました。</exception>
+            <exception cref="T:System.ObjectDisposedException">破棄されたオブジェクトにアクセスできません。</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Model.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="T:LibLinearDotNet.Parameter">
+            <summary>
+            大規模線形分類のパラメータを表現します。
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.Parameter.#ctor">
+            <summary>
+            <see cref="T:LibLinearDotNet.Parameter"/> クラスの新しいインスタンスを初期化します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.C">
+            <summary>
+            制約違反コストのパラメータを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.Epsilon">
+            <summary>
+            停止評価のパラメータを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.InitialSolution">
+            <summary>
+            初期解を取得または設定します。
+            </summary>
+            <remarks><see cref="P:LibLinearDotNet.Problem.Number"/> が 2 以外の場合、<see cref="P:LibLinearDotNet.Problem.Number"/> * <see cref="P:LibLinearDotNet.Model.Classes"/> + <see cref="P:LibLinearDotNet.Model.Classes"/> が配列長になります。それ以外の場合、配列長は <see cref="P:LibLinearDotNet.Problem.Number"/>。</remarks>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.LengthOfWeight">
+            <summary>
+            <see cref="P:LibLinearDotNet.Parameter.Weight"/> と <see cref="P:LibLinearDotNet.Parameter.WeightLabel"/> の配列に含まれる要素の数を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.P">
+            <summary>
+            サポート ベクター回帰の損失感度を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.SolverType">
+            <summary>
+            ソルバーの種別を取得または設定します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.Weight">
+            <summary>
+            クラスに対するペナルティーを変化させるための重みを取得または設定します。
+            </summary>
+            <remarks><code>Weight[i]</code> は <code>WeightLabel[i]</code> に対応します。</remarks>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.WeightLabel">
+            <summary>
+            クラスに対するペナルティーを変化させるためのラベルを取得または設定します。
+            </summary>
+            <remarks><code>Weight[i]</code> は <code>WeightLabel[i]</code> に対応します。</remarks>
+        </member>
+        <member name="T:LibLinearDotNet.Problem">
+            <summary>
+            問題を表現します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Bias">
+            <summary>
+            バイアスを取得します。
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Length">
+            <summary>
+            <see cref="T:LibSvmDotNet.Problem"/> に含まれているデータの数を取得します。
+            </summary>
+            <returns>The number of data contained in the <see cref="T:LibLinearDotNet.Problem"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">破棄されたオブジェクトにアクセスできません。</exception>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Number">
+            <summary>
+            特徴の数 (<code>Bias >= 0</code> における、バイアス特徴を含む) を取得します。
+            </summary>
+            <returns>The number of feature (including the bias feature if bias >= 0) in the <see cref="T:LibLinearDotNet.Problem"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">破棄されたオブジェクトにアクセスできません。</exception>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.X">
+            <summary>
+            <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/> を取得します。
+            </summary>
+            <returns>問題が保有する <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/> インスタンス。</returns>
+            <exception cref="T:System.ObjectDisposedException">破棄されたオブジェクトにアクセスできません。</exception>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Y">
+            <summary>
+            ターゲットの値を含む配列を取得します。
+            </summary>
+            <returns>ターゲットの値を含む配列。分類の場合は整数値。回帰の場合は実数値。</returns>
+            <exception cref="T:System.ObjectDisposedException">破棄されたオブジェクトにアクセスできません。</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Problem.FromFile(System.String,System.Double)">
+            <summary>
+            指定したファイルから新しい <see cref="T:LibLinearDotNet.Problem"/> を生成します。
+            </summary>
+            <param name="path">LIBLINEAR フォーマットのファイル名とパス。</param>
+            <param name="bias">バイアス。</param>
+            <returns>このメソッドは指定したファイルに対する新しい <see cref="T:LibLinearDotNet.Problem"/> を返します。</returns>
+            <exception cref="T:System.ArgumentException">指定したパスが null または空白文字です。</exception>
+            <exception cref="T:System.IO.FileNotFoundException">指定したファイルが存在しません。</exception>
+            <exception cref="T:System.FormatException">指定したファイルは不正なフォーマットです。</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Problem.DisposeUnmanaged">
+            <summary>
+            アンマネージ リソースを解放します。
+            </summary>
+        </member>
+        <member name="T:LibLinearDotNet.SolverType">
+            <summary>
+            SolverType 列挙型は大規模線形分類に対するソルバーの種別を指定します。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedLogisticRegression">
+            <summary>
+            L2 正則化ロジスティック回帰 (双対)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorClassificationDual">
+            <summary>
+            L2 正則化 L2 損失サポート ベクター 分類 (双対)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorClassification">
+            <summary>
+            L2 正則化 L2 損失サポート ベクター 分類 (主)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL1LossSupportVectorClassificationDual">
+            <summary>
+            L2 正則化 L1 損失サポート ベクター 分類 (双対)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.MulticlassSupportVectorMachineCrammerSinger">
+            <summary>
+            Crammer と Singer のサポート ベクター 分類。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L1RegularizedL2LossSupportVectorClassification">
+            <summary>
+            L2 正則化 L2 損失サポート ベクター 分類。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L1RegularizedLogisticRegression">
+            <summary>
+            L1 正則化ロジスティック回帰。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedLogisticRegressionDual">
+            <summary>
+            L2 正則化ロジスティック回帰 (双対)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorRegression">
+            <summary>
+            L2 正則化 L2 損失サポート ベクター 回帰 (主)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorRegressionDual">
+            <summary>
+            L2 正則化 L2 損失サポート ベクター 回帰 (双対)。
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL1LossSupportVectorRegressionDual">
+            <summary>
+            L2 正則化 L1 損失サポート ベクター 回帰 (双対)。
+            </summary>
+        </member>
+    </members>
+</doc>
