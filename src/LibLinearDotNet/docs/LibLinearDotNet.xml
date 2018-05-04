@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibLinearDotNet</name>
+    </assembly>
+    <members>
+        <member name="T:LibLinearDotNet.DisposableObject">
+            <summary>
+            A class which has a pointer of native structure.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.DisposableObject.IsDisposed">
+            <summary>
+            Gets a value indicating whether this instance has been disposed.
+            </summary>
+            <returns>true if this instance has been disposed; otherwise, false.</returns>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.ThrowIfDisposed">
+            <summary>
+            If this object is disposed, then <see cref="T:System.ObjectDisposedException"/> is thrown.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.ThrowIfDisposed(System.String)">
+            <summary>
+            If this object is disposed, then <see cref="T:System.ObjectDisposedException"/> is thrown.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.DisposeManaged">
+            <summary>
+            Releases all managed resources.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.DisposeUnmanaged">
+            <summary>
+            Releases all unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.Dispose">
+            <summary>
+            Releases all resources used by this <see cref="T:LibLinearDotNet.DisposableObject"/>.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.DisposableObject.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by this <see cref="T:LibLinearDotNet.DisposableObject"/>.
+            </summary>
+            <param name="disposing">Indicate value whether <see cref="M:System.IDisposable.Dispose"/> method was called.</param>
+        </member>
+        <member name="T:LibLinearDotNet.FeatureNode">
+            <summary>
+            Represents an element for vector data.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNode.#ctor(System.IntPtr,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibLinearDotNet.FeatureNode"/> struct with the specified featureNode data and index of featureNode data.
+            </summary>
+            <param name="ptr">Pointer to an array of <see cref="T:LibLinearDotNet.NativeMethods.feature_node"/>.</param>
+            <param name="index">The zero-based index at which featureNode is located.</param>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNode.#ctor(LibLinearDotNet.NativeMethods.feature_node*)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibLinearDotNet.FeatureNode"/> struct with the specified featureNode data.
+            </summary>
+            <param name="ptr">Pointer to an array of <see cref="T:LibLinearDotNet.NativeMethods.feature_node"/>.</param>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNode.Index">
+            <summary>
+            Gets or sets a value indicating the position of the element in vector.
+            </summary>
+            <returns>The one-based index representing the position of the element in vector.</returns>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNode.Value">
+            <summary>
+            Gets or sets a value of the element in vector.
+            </summary>
+            <returns>The value of the element in vector.</returns>
+        </member>
+        <member name="T:LibLinearDotNet.FeatureNodeArray">
+            <summary>
+            Represents an vector data.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArray.Length">
+            <summary>
+            Gets the total number of elements in all the dimensions of the <see cref="T:LibLinearDotNet.FeatureNodeArray"/>.
+            </summary>
+            <returns>The total number of elements in all the dimensions of the <see cref="T:LibLinearDotNet.FeatureNodeArray"/>; zero if there are no elements in the array.</returns>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArray.Item(System.Int32)">
+            <summary>
+            Gets the element at the specified index.
+            </summary>
+            <param name="index">The index of the element to get.</param>
+            <returns>The element at the specified index.</returns>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNodeArray.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:LibLinearDotNet.FeatureNodeArray.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="T:LibLinearDotNet.FeatureNodeArrayCollecion">
+            <summary>
+            Represents an collection of <see cref="T:LibLinearDotNet.FeatureNodeArray"/>.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArrayCollecion.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/>.
+            </summary>
+            <returns>The number of elements contained in the <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/>.</returns>
+        </member>
+        <member name="P:LibLinearDotNet.FeatureNodeArrayCollecion.Item(System.Int32)">
+            <summary>
+            Gets the element at the specified index.
+            </summary>
+            <param name="index">The index of the element to get.</param>
+            <returns>The element at the specified index.</returns>
+        </member>
+        <member name="T:LibLinearDotNet.LibLinear">
+            <summary>
+            Provides functions of LIBLINEAR.
+            </summary>
+        </member>
+        <member name="T:LibLinearDotNet.LibLinear.PrintFunc">
+            <summary>
+            Encapsulates a method that has a string parameter and does not return a value.
+            </summary>
+            <param name="message">The message given from LIBLINEAR.</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.CheckParameter(LibLinearDotNet.Problem,LibLinearDotNet.Parameter)">
+            <summary>
+            Checks whether the parameters are within the feasible range of the problem.
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <returns>It returns null if the parameters are feasible, otherwise an error message is returned.</returns>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.CrossValidation(LibLinearDotNet.Problem,LibLinearDotNet.Parameter,System.Int32,System.Double[]@)">
+            <summary>
+            Conducts cross validation.
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <param name="fold">The number of division for samples.</param>
+            <param name="target">The predicted labels (of all prob's instances) in the validation process will be stored.</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.FindParameterC(LibLinearDotNet.Problem,LibLinearDotNet.Parameter,System.Int32,System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+            Instead of conducting cross validation under a specified parameter C, conducts cross validation many times to find the best one with the highest cross validation accuracy.
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <param name="fold">The number of division for samples.</param>
+            <param name="startC">The start parameter of C.</param>
+            <param name="maxC">The max parameter of C.</param>
+            <param name="bestC">Contains the best parameter of C.</param>
+            <param name="bestRate">Contains the accuracy corresponding <paramref name="bestC"/>.</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.Predict(LibLinearDotNet.Model,LibLinearDotNet.FeatureNodeArray)">
+            <summary>
+            Does classification or regression on a test vector x given a model.
+            </summary>
+            <param name="model"><see cref="T:LibLinearDotNet.Model"/>.</param>
+            <param name="x">The test vector.</param>
+            <returns>
+            <para>For a classification model, the predicted class for x is returned.</para>
+            <para>For a regression model, the function value of x calculated using the model is returned.</para>
+            </returns>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.Predict(LibLinearDotNet.Model,LibLinearDotNet.FeatureNodeArray,System.Double[]@)">
+            <summary>
+            Does classification or regression on a test vector x given a model.
+            </summary>
+            <param name="model"><see cref="T:LibLinearDotNet.Model"/>.</param>
+            <param name="x">The test vector.</param>
+            <param name="probability">Contains probability estimates.</param>
+            <returns>The predicted class for x is returned.</returns>
+            <remarks>Currently, we support only the probability outputs of logistic regression.</remarks>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.PredictValues(LibLinearDotNet.Model,LibLinearDotNet.FeatureNodeArray,System.Double[]@)">
+            <summary>
+            Returns the class with the highest decision value.
+            </summary>
+            <param name="model"><see cref="T:LibLinearDotNet.Model"/>.</param>
+            <param name="x">The test vector.</param>
+            <param name="decisionValues">Contains decision values.</param>
+            <returns>The class with the highest decision value is returned.</returns>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.SetPrintFunction(LibLinearDotNet.LibLinear.PrintFunc)">
+            <summary>
+            Specify output fpr LIBLINEAR.
+            </summary>
+            <param name="printFunc">The callback to receive the output and process.</param>
+            <remarks>If specify null, it suppress output from LIBLINEAR.</remarks>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinear.Train(LibLinearDotNet.Problem,LibLinearDotNet.Parameter)">
+            <summary>
+            Does constructs and returns a linear classification or regression model according to the given training data and parameters.
+            </summary>
+            <param name="problem"><see cref="T:LibLinearDotNet.Problem"/>.</param>
+            <param name="parameter"><see cref="T:LibLinearDotNet.Parameter"/>.</param>
+            <returns>This method returns a new <see cref="T:LibLinearDotNet.Model"/>.</returns>
+        </member>
+        <member name="T:LibLinearDotNet.LibLinearException">
+            <summary>
+            The exception is general exception for LIBLINEAR. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinearException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibLinearDotNet.LibLinearException"/> class.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinearException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibLinearDotNet.LibLinearException"/> class with a specified error message.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:LibLinearDotNet.LibLinearException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibLinearDotNet.LibLinearException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The name of the parameter that caused the current exception.</param>
+        </member>
+        <member name="T:LibLinearDotNet.Model">
+            <summary>
+            Represents an trained model.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Classes">
+            <summary>
+            Gets the number of classes.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Features">
+            <summary>
+            Gets the number of features.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.IsEstimableProbability">
+            <summary>
+            Indicates whether this model contains required information to do probability estimates.
+            </summary>
+            <returns>true if this model contains required information to do probability estimates; otherwise, false.</returns>
+        </member>
+        <member name="P:LibLinearDotNet.Model.IsRegressionModel">
+            <summary>
+            Indicates whether this model is a suport vector regression model.
+            </summary>
+            <returns>true if this model is a suport vector regression model; otherwise, false.</returns>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Label">
+            <summary>
+            Gets the array for label of each class.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Parameter">
+            <summary>
+            Gets the parameter of this model.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Model.Weights">
+            <summary>
+            Gets the feature weights.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.Model.GetBiasOfDecisionFunction(System.Int32)">
+            <summary>
+            Returns the bias term corresponding to the class with specified label index.
+            </summary>
+            <param name="labelIndex">The label index.</param>
+            <returns>
+            <para>The bias term corresponding to the class with <paramref name="labelIndex"/>.</para>
+            <para>For classification models, if <paramref name="labelIndex"/> is not in the valid range(0 to <see cref="P:LibLinearDotNet.Model.Classes"/> - 1), then a zero value will be returned.</para>
+            <para>For regression models, <paramref name="labelIndex"/> is ignored.</para>
+            </returns>
+        </member>
+        <member name="M:LibLinearDotNet.Model.GetCoefficientOfDecisionFunction(System.Int32,System.Int32)">
+            <summary>
+            Returns the coefficient for the feature with the specified feature index and the class with the specified label index.
+            </summary>
+            <param name="featureIndex">The feature index.</param>
+            <param name="labelIndex">The label index.</param>
+            <returns>
+            <para>The coefficient for the feature with <paramref name="featureIndex"/> and the class with <paramref name="labelIndex"/>.</para>
+            <para>For classification models, if <paramref name="labelIndex"/> is not in a valid range (0 to <see cref="P:LibLinearDotNet.Model.Classes"/> - 1), then a zero value will be returned.</para>
+            <para>Ror regression models, <paramref name="labelIndex"/> is ignored.</para>
+            </returns>
+        </member>
+        <member name="M:LibLinearDotNet.Model.Load(System.String)">
+            <summary>
+            Loads an <see cref="T:LibLinearDotNet.Model"/> given the specified file.
+            </summary>
+            <param name="path">The LIBLINEAR format file name and path.</param>
+            <returns>This method returns a new <see cref="T:LibLinearDotNet.Model"/> for the specified file.</returns>
+            <exception cref="T:System.ArgumentException">The specified path is null or whitespace.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">The specified file is not found.</exception>
+            <exception cref="T:System.FormatException">The specified file is invalid format.</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Model.Save(System.String,LibLinearDotNet.Model)">
+            <summary>
+            Saves this <see cref="T:LibLinearDotNet.Model"/> to the specified file.
+            </summary>
+            <param name="path">The file to write to.</param>
+            <param name="model">The model to write to the file.</param>
+            <exception cref="T:LibLinearDotNet.LibLinearException">Failed to save model to the specified file.</exception>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Model.DisposeUnmanaged">
+            <summary>
+            Releases all unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:LibLinearDotNet.Parameter">
+            <summary>
+            Represents an parameter for Large Linear Classification.
+            </summary>
+        </member>
+        <member name="M:LibLinearDotNet.Parameter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LibLinearDotNet.Parameter"/> class.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.C">
+            <summary>
+            Gets or sets the cost of constraints violation parameter.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.Epsilon">
+            <summary>
+            Gets or sets the parameter of stopping criterion.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.InitialSolution">
+            <summary>
+            Gets or set the initial solution.
+            </summary>
+            <remarks>If <see cref="P:LibLinearDotNet.Problem.Number"/> is not 2, the array length should be <see cref="P:LibLinearDotNet.Problem.Number"/> * <see cref="P:LibLinearDotNet.Model.Classes"/> + <see cref="P:LibLinearDotNet.Model.Classes"/>. Otherwise the array length should be <see cref="P:LibLinearDotNet.Problem.Number"/>.</remarks>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.LengthOfWeight">
+            <summary>
+            Gets or sets the number of elements in the array <see cref="P:LibLinearDotNet.Parameter.Weight"/> and <see cref="P:LibLinearDotNet.Parameter.WeightLabel"/>.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.P">
+            <summary>
+            Gets or sets the sensitiveness of loss of support vector regression.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.SolverType">
+            <summary>
+            Gets or sets the type of solver.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.Weight">
+            <summary>
+            Gets or sets the array of factors to change penalty for some class.
+            </summary>
+            <remarks>Each <code>Weight[i]</code> corresponds to <code>WeightLabel[i]</code>.</remarks>
+        </member>
+        <member name="P:LibLinearDotNet.Parameter.WeightLabel">
+            <summary>
+            Gets or sets the array of labels to change penalty for some class.
+            </summary>
+            <remarks>Each <code>Weight[i]</code> corresponds to <code>WeightLabel[i]</code>.</remarks>
+        </member>
+        <member name="T:LibLinearDotNet.Problem">
+            <summary>
+            Represents an problem.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Bias">
+            <summary>
+            Gets the bias.
+            </summary>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Length">
+            <summary>
+            Gets the number of data contained in the <see cref="T:LibLinearDotNet.Problem"/>.
+            </summary>
+            <returns>The number of data contained in the <see cref="T:LibLinearDotNet.Problem"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Number">
+            <summary>
+            Gets the number of feature (including the bias feature if <code>Bias >= 0</code>).
+            </summary>
+            <returns>The number of feature (including the bias feature if bias >= 0) in the <see cref="T:LibLinearDotNet.Problem"/>.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.X">
+            <summary>
+            Gets the <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/>.
+            </summary>
+            <returns>An <see cref="T:LibLinearDotNet.FeatureNodeArrayCollecion"/> instance that problem owns.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+        </member>
+        <member name="P:LibLinearDotNet.Problem.Y">
+            <summary>
+            Gets an array containing the target values.
+            </summary>
+            <returns>An array containing the target values. Integers in classification. Real numbers in regression.</returns>
+            <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Problem.FromFile(System.String,System.Double)">
+            <summary>
+            Creates a new <see cref="T:LibLinearDotNet.Problem"/> from the specified file.
+            </summary>
+            <param name="path">The LIBLINEAR format file name and path.</param>
+            <param name="bias">The bias.</param>
+            <returns>This method returns a new <see cref="T:LibLinearDotNet.Problem"/> for the specified file.</returns>
+            <exception cref="T:System.ArgumentException">The specified path is null or whitespace.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">The specified file is not found.</exception>
+            <exception cref="T:System.FormatException">The specified file is invalid format.</exception>
+        </member>
+        <member name="M:LibLinearDotNet.Problem.DisposeUnmanaged">
+            <summary>
+            Releases all unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:LibLinearDotNet.SolverType">
+            <summary>
+            The SolverType enumeration specifies the solver type for Large Linear Classification.
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedLogisticRegression">
+            <summary>
+            L2-regularized logistic regression (primal).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorClassificationDual">
+            <summary>
+            L2-regularized L2-loss support vector classification (dual).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorClassification">
+            <summary>
+            L2-regularized L2-loss support vector classification (primal).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL1LossSupportVectorClassificationDual">
+            <summary>
+            L2-regularized L1-loss support vector classification (dual).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.MulticlassSupportVectorMachineCrammerSinger">
+            <summary>
+            Support vector classification by Crammer and Singer.
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L1RegularizedL2LossSupportVectorClassification">
+            <summary>
+            L1-regularized L2-loss support vector classification.
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L1RegularizedLogisticRegression">
+            <summary>
+            L1-regularized logistic regression.
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedLogisticRegressionDual">
+            <summary>
+            L2-regularized logistic regression (dual).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorRegression">
+            <summary>
+            L2-regularized L2-loss support vector regression (primal).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL2LossSupportVectorRegressionDual">
+            <summary>
+            L2-regularized L2-loss support vector regression (dual).
+            </summary>
+        </member>
+        <member name="F:LibLinearDotNet.SolverType.L2RegularizedL1LossSupportVectorRegressionDual">
+            <summary>
+            L2-regularized L1-loss support vector regression (dual).
+            </summary>
+        </member>
+    </members>
+</doc>
