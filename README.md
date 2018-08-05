@@ -1,4 +1,4 @@
-# LibLinear.Net
+# ![Alt text](nuget/svm48.png "LibLinear.Net") LibLinear.Net
  
 .NET wrapper for LIBLINEAR written in C#  
 LibLinear.Net works on Windows and Linux!!
