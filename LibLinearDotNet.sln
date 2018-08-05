@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pendigits", "example\Pendig
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindParameterC", "example\FindParameterC\FindParameterC.csproj", "{059B35B6-BDAE-4D21-9966-4033556AA49D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classification2", "example\Classification2\Classification2.csproj", "{7A1B54C3-59E8-473D-91E1-C3756E4346D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{059B35B6-BDAE-4D21-9966-4033556AA49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{059B35B6-BDAE-4D21-9966-4033556AA49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{059B35B6-BDAE-4D21-9966-4033556AA49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1B54C3-59E8-473D-91E1-C3756E4346D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1B54C3-59E8-473D-91E1-C3756E4346D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1B54C3-59E8-473D-91E1-C3756E4346D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1B54C3-59E8-473D-91E1-C3756E4346D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{ACBCBABD-AC66-4A6B-9FCD-3BA4D7808FE9} = {CD4BE111-2A82-4CD4-98D6-6020AAA364A4}
 		{E49BF91F-9C6D-445B-A619-544BB194771E} = {CD4BE111-2A82-4CD4-98D6-6020AAA364A4}
 		{059B35B6-BDAE-4D21-9966-4033556AA49D} = {CD4BE111-2A82-4CD4-98D6-6020AAA364A4}
+		{7A1B54C3-59E8-473D-91E1-C3756E4346D0} = {CD4BE111-2A82-4CD4-98D6-6020AAA364A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DEFE2022-2A30-44E7-84AB-A435644CDF2C}
