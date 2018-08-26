@@ -1,9 +1,11 @@
-# ![Alt text](nuget/svm48.png "LibLinear.Net") LibLinear.Net
+# ![Alt text](nuget/svm48.png "LibLinear.Net") LibLinear.Net [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
  
 .NET wrapper for LIBLINEAR written in C#  
 LibLinear.Net works on Windows and Linux!!
 
-[![NuGet version](https://badge.fury.io/nu/LibLinearDotNet.svg)](https://badge.fury.io/nu/LibLinearDotNet)
+|Package|NuGet|
+|---|---|
+|LibLinearDotNet|[![NuGet version](https://img.shields.io/nuget/v/LibLinearDotNet.svg)](https://www.nuget.org/packages/LibLinearDotNet)|
 
 ## Usage
 
